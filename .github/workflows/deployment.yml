@@ -14,6 +14,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Set up Node.js 18.20.6
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.20.6
+
       - name: Install dependencies
         run: npm ci
 
