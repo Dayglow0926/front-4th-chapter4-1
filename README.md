@@ -2,6 +2,8 @@
 
 ## 개요
 
+![alt text](<hanghae-4th-chapter4-1.drawio (1).png>)
+
 GitHub Actions에 워크플로우를 작성해 다음과 같이 배포가 진행됩니다.
 
 1. 저장소를 체크아웃합니다.
