@@ -1,36 +1,30 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 프론트엔드 배포 파이프라인
 
-## Getting Started
+## 개요
 
-First, run the development server:
+GitHub Actions에 워크플로우를 작성해 다음과 같이 배포가 진행됩니다.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. 저장소를 체크아웃합니다.
+2. Node.js 18.20.6(LTS) 버전을 설정합니다.
+3. 프로젝트 의존성을 설치합니다.
+4. Next.js 프로젝트를 빌드합니다.
+5. AWS 자격 증명을 구성합니다.
+6. 빌드된 파일을 S3 버킷에 동기화합니다.
+7. CloudFront 캐시를 무효화합니다.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 주요 링크
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- S3 버킷 웹사이트 엔드포인트: http://hanghae-plus-4-1.s3-website-us-east-1.amazonaws.com
+- CloudFrount 배포 도메인 이름: https://d346v5hpog4fqr.cloudfront.net
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 주요 개념
 
-## Learn More
+- GitHub Actions과 CI/CD 도구: \***\*\_\*\***
+- S3와 스토리지: \***\*\_\*\***
+- CloudFront와 CDN: \***\*\_\*\***
+- 캐시 무효화(Cache Invalidation): \***\*\_\*\***
+- Repository secret과 환경변수: \***\*\_\*\***
 
-To learn more about Next.js, take a look at the following resources:
+## CDN과 성능최적화
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- (CDN 도입 전과 도입 후의 성능 개선 보고서 작성)
